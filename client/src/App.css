@@ -1,6 +1,15 @@
 .container {
   max-width: 480px;
-  border: 1px solid gray;
-  height: 100vh;
+  border: 1px solid rgb(225, 225, 225);
   margin: 0 auto;
+  margin-bottom: 100px;
+}
+.header_bg{
+  background-image: url("./assets/bg-cover.png");
+  background-size: 480px;
+  height: 81px;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
