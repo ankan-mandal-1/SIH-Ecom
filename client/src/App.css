@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Average+Sans&display=swap");
+
 .container {
   max-width: 480px;
   border: 1px solid rgb(225, 225, 225);
   margin: 0 auto;
   margin-bottom: 100px;
 }
-.header_bg{
+.header_bg {
   background-image: url("./assets/bg-cover.png");
   background-size: 480px;
   height: 81px;
@@ -12,4 +14,10 @@
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+.average-sans-regular {
+  font-family: "Average Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
