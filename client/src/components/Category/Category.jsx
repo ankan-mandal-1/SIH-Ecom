@@ -7,21 +7,8 @@ const Category = () => {
   return (
     <div className="category">
         <h2>Categories</h2>
+        
         <div className="category_content">
-            <div className="category_item">
-                <img src={videos} alt="" />
-                <div>Videos</div>
-            </div>
-
-            <div className="category_item">
-                <img src={address} alt="" />
-                <div>Address</div>
-            </div>
-
-            <div className="category_item">
-                <img src={crop} alt="" />
-                <div>Crop Care</div>
-            </div>
 
             <Link to="/products">
                 <div className="category_item">
@@ -30,20 +17,47 @@ const Category = () => {
                 </div>
             </Link>
 
+            <Link to="/products">
+            <div className="category_item">
+                <img src={videos} alt="" />
+                <div>Videos</div>
+            </div>
+            </Link>
+
+            <Link to="/products">
+            <div className="category_item">
+                <img src={address} alt="" />
+                <div>Address</div>
+            </div>
+            </Link>
+
+            <Link to="/products">
+            <div className="category_item">
+                <img src={crop} alt="" />
+                <div>Crop Care</div>
+            </div>
+            </Link>
+
+            <Link to="/products">
             <div className="category_item">
                 <img src={pencil} alt="" />
                 <div>Soil Testing</div>
             </div>
+            </Link>
 
+            <Link to="/products">
             <div className="category_item">
                 <img src={person} alt="" />
                 <div>Expert Advice</div>
             </div>
+            </Link>
 
+            <Link to="/products">
             <div className="category_item">
                 <img src={star} alt="" />
                 <div>Rate Us</div>
             </div>
+            </Link>
         </div>
     </div>
   )

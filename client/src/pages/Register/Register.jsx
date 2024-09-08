@@ -1,54 +1,51 @@
 import React, { useState } from 'react'
-import {Link, useNavigate} from "react-router-dom"
 import toast from 'react-hot-toast'
+import {Link, useNavigate} from "react-router-dom"
 import apiClient from '../../utils/apiClient'
 
-const Profile = () => {
+const Register = () => {
 
-  const navigate = useNavigate()
+    const navigate = useNavigate()
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
-  const token = localStorage.getItem("token")
-
-  const submitHandler = async (e) => {
-    e.preventDefault()
+    const token = localStorage.getItem("token")
+  
+    const submitHandler = async (e) => {
+        e.preventDefault()
         try {
-            const res = await apiClient.post("/auth/login", { email, password})
+            const res = await apiClient.post("/auth/register", {name, email, password})
             toast.success(res.data.message)
             localStorage.setItem("token", res.data.token)
             navigate("/admin")
         } catch (error) {
             toast.error(error.response.data.message)
         }
-  }
+    }
 
-  if(token){
-    return (
-      <>
-      <Link to="/admin">
-      <div className="buy_now" style={{textAlign: "center"}}>
-          <button>Go to Admin Dashboard</button>
-      </div>
-      </Link>
-
-      <div className="buy_now" style={{textAlign: "center"}}>
-      <button onClick={() => {
-        localStorage.removeItem("token")
-        navigate("/")
-      }}>LOGOUT</button>
-      </div>
-      </>
-    )
-}
+    if(token){
+        return (
+            <Link to="/admin">
+            <div className="buy_now" style={{textAlign: "center"}}>
+                <button>Go to Admin Dashboard</button>
+            </div>
+            </Link>
+        )
+    }
 
   return (
     <div className="dashboard box_over">
         <div className="center_div">
-            <h1 className="heading">Login</h1>
+            <h1 className="heading">Register</h1>
             <div className='input_container'>
                 <form onSubmit={submitHandler}>
+                <div className='input_field'>
+                    <label>Name</label>
+                    <input type="text" placeholder='Name' name="name"
+                    value={name} onChange={(e) => setName(e.target.value)} />
+                </div>
                 <div className='input_field'>
                     <label>Email</label>
                     <input type="email" placeholder='Email' name="email"
@@ -60,10 +57,10 @@ const Profile = () => {
                     value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <div className='input_field'>
-                    <label>Don't have an account? <Link to="/register">Register</Link></label>
+                    <label>Already have an account? <Link to="/profile">Login</Link></label>
                 </div>
                 <div className="buy_now">
-                    <button>LOGIN</button>
+                    <button>REGISTER</button>
                 </div>
                 </form>
               </div>
@@ -72,4 +69,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default Register

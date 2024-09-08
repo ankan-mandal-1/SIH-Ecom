@@ -19,3 +19,11 @@
     width: 100%;
     font-size: 18px;
 }
+.product_item img{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    background: #efefef;
+    border-radius: 5px;
+    border: none;
+}

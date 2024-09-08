@@ -2,13 +2,13 @@ import React from 'react'
 import "./ProductCard.css"
 import { product } from '../../assets/assets'
 
-const ProductCard = () => {
+const ProductCard = ({title, imageUrl, original_price, offer_price}) => {
   return (
     <div className="product_item">
-        <img src={product} alt="" />
-        <div>Aries Agro Limited Agromin Gold</div>
-        <div className="strike">Rs 2060.00</div>
-        <div className="sale_price">Rs 3060</div>
+        <img src={imageUrl} alt="" />
+        <div>{title}</div>
+        <div className="strike">Rs {original_price}</div>
+        <div className="sale_price">Rs {offer_price}</div>
     </div>
   )
 }
