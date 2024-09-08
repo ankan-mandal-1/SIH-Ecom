@@ -1,7 +1,12 @@
+
+import React from "react";
+import { Link } from "react-router-dom";
+
 import React, { useState } from 'react'
 import {Link, useNavigate} from "react-router-dom"
 import toast from 'react-hot-toast'
 import apiClient from '../../utils/apiClient'
+
 
 const Profile = () => {
 
@@ -45,6 +50,14 @@ const Profile = () => {
 
   return (
     <div className="dashboard box_over">
+
+      <div className="center_div">
+        <h1 className="heading">Profile</h1>
+        <div className="buy_now">
+          <Link to="/">
+            <button>Logout</button>
+          </Link>
+
         <div className="center_div">
             <h1 className="heading">Login</h1>
             <div className='input_container'>
@@ -67,9 +80,12 @@ const Profile = () => {
                 </div>
                 </form>
               </div>
-        </div>
-    </div>
-  )
-}
 
-export default Profile
+        </div>
+        <p style={{ color: "gray" }}>🚧 Work in Progress!</p>
+      </div>
+    </div>
+  );
+};
+
+export default Profile;
