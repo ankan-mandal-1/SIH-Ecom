@@ -17,38 +17,16 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/clerk-react";
+import Landing from "./pages/Landing/Landing";
 
 function App() {
   return (
     <div className="container">
       <div className="header_bg"></div>
 
-      <div>
-        <SignedOut>
-          <SignInButton
-            style={{
-              width: 248,
-              height: 60,
-              background: "#34A853",
-              boxShadow: "0px 10px 40px rgba(122.04, 128.85, 190.19, 0.16)",
-              borderRadius: 28.5,
-              textAlign: "center",
-              color: "white",
-              fontSize: 18,
-              fontFamily: "Average Sans",
-              fontWeight: "400",
-              textTransform: "uppercase",
-              letterSpacing: 1.44,
-              wordWrap: "break-word",
-            }}
-          />
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-      </div>
       <Routes>
-        {/* <Route path="/" element={<Landing />} /> */}
+        <Route path="/" element={<Landing />} />
+
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/products" element={<Cart />} />
         <Route path="/scan" element={<Scan />} />
